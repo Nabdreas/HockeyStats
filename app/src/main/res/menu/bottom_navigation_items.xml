@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+     <item
+        android:id="@+id/nations"
+        android:icon="@drawable/ic_public_black_24dp"
+        android:title="@string/nations"/>
+    <item
+        android:id="@+id/transfers"
+        android:icon="@drawable/ic_attach_money_black_24dp"
+        android:title="@string/transfers"/>
+    <item
+        android:id="@+id/league"
+        android:icon="@drawable/ic_apps_black_24dp"
+        android:title="@string/league"/>
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="@string/search"/>
+    <item
+        android:id="@+id/arenas"
+        android:icon="@drawable/ic_navigation_black_24dp"
+        android:title="@string/arenas"/>
+
+
+</menu>
