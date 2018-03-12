@@ -35,9 +35,10 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment selectedFragment = null;
                 switch (item.getItemId()) {
-                    case R.id.nations:
-                        selectedFragment = NationsFragment.newInstance();
-                        break;
+                    //TODO: implement in the future
+//                    case R.id.nations:
+//                        selectedFragment = NationsFragment.newInstance();
+//                        break;
                     case R.id.transfers:
                         selectedFragment = TransfersFragment.newInstance();
                         break;
@@ -47,9 +48,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.search:
                         selectedFragment = SearchFragment.newInstance();
                         break;
-                    case R.id.arenas:
-                        selectedFragment = ArenasFragment.newInstance();
-                        break;
+                        //TODO: implement in the future
+//                    case R.id.arenas:
+//                        selectedFragment = ArenasFragment.newInstance();
+//                        break;
                 }
 
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -59,9 +61,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_layout, LeagueFragment.newInstance());
-        transaction.commit();
     }
 
 }
