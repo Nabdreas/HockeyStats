@@ -5,4 +5,5 @@
     <string name="league">League</string>
     <string name="search">Search</string>
     <string name="arenas">Arenas</string>
+    <string name="search_hint">Search for players and teams</string>
 </resources>

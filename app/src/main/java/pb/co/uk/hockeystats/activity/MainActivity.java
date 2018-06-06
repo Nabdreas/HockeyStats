@@ -1,66 +1,58 @@
 package pb.co.uk.hockeystats.activity;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 
 import pb.co.uk.hockeystats.R;
-import pb.co.uk.hockeystats.fragment.ArenasFragment;
 import pb.co.uk.hockeystats.fragment.LeagueFragment;
-import pb.co.uk.hockeystats.fragment.NationsFragment;
 import pb.co.uk.hockeystats.fragment.SearchFragment;
 import pb.co.uk.hockeystats.fragment.TransfersFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private BottomNavigationView mBottomNavigationView;
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.transfers:
+                    selectedFragment(TransfersFragment.newInstance());
+                    return true;
+                case R.id.league:
+                    selectedFragment(LeagueFragment.newInstance());
+                    return true;
+                case R.id.search:
+                    selectedFragment(SearchFragment.newInstance());
+                    return true;
+            }
+            return false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mBottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation_view);
+        mBottomNavigationView = findViewById(R.id.navigation_view);
 
         initialiseViews();
     }
 
     private void initialiseViews() {
-        mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedFragment = null;
-                switch (item.getItemId()) {
-                    //TODO: implement in the future
-//                    case R.id.nations:
-//                        selectedFragment = NationsFragment.newInstance();
-//                        break;
-                    case R.id.transfers:
-                        selectedFragment = TransfersFragment.newInstance();
-                        break;
-                    case R.id.league:
-                        selectedFragment = LeagueFragment.newInstance();
-                        break;
-                    case R.id.search:
-                        selectedFragment = SearchFragment.newInstance();
-                        break;
-                        //TODO: implement in the future
-//                    case R.id.arenas:
-//                        selectedFragment = ArenasFragment.newInstance();
-//                        break;
-                }
+        mBottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        mBottomNavigationView.setSelectedItemId(R.id.league);
+    }
 
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_layout, selectedFragment);
-                transaction.commit();
-                return true;
-            }
-        });
-
+    private void selectedFragment(Fragment selectedFragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_layout, selectedFragment);
+        transaction.commit();
     }
 
 }
