@@ -10,26 +10,16 @@
         layout="@layout/toolbar" />
 
     <TextView
-        android:id="@+id/league_title_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/padding_normal"
-        android:textSize="20sp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:text="League Name" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/league_table"
-        android:layout_width="match_parent"
+        android:id="@+id/team_name_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_normal"
         android:layout_marginStart="@dimen/margin_normal"
         android:layout_marginTop="@dimen/margin_normal"
+        android:textColor="@color/navyblue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/league_title_label" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:text="TEAM NAME" />
 
 </android.support.constraint.ConstraintLayout>
