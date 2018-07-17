@@ -1,4 +1,4 @@
-package pb.co.uk.hockeystats.activity;
+package pb.co.uk.hockeystats.view.activity;
 
 import android.content.Context;
 import android.content.Intent;

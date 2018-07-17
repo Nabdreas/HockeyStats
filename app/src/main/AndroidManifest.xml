@@ -11,15 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/HSTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.BaseActivity"/>
-        <activity android:name=".activity.TeamActivity"/>
+        <activity android:name=".view.activity.BaseActivity"/>
+        <activity android:name=".view.activity.TeamActivity"/>
     </application>
 
 </manifest>

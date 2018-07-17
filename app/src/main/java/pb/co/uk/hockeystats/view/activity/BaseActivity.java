@@ -1,4 +1,4 @@
-package pb.co.uk.hockeystats.activity;
+package pb.co.uk.hockeystats.view.activity;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;

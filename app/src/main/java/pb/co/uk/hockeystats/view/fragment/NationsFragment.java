@@ -1,4 +1,4 @@
-package pb.co.uk.hockeystats.fragment;
+package pb.co.uk.hockeystats.view.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

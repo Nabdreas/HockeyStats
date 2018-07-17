@@ -1,4 +1,4 @@
-package pb.co.uk.hockeystats.adapters;
+package pb.co.uk.hockeystats.view.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import pb.co.uk.hockeystats.R;
-import pb.co.uk.hockeystats.model.viewholder.LeagueTableViewHolder;
+import pb.co.uk.hockeystats.view.viewholder.LeagueTableViewHolder;
 
 public class LeagueTableAdapter extends RecyclerView.Adapter<LeagueTableViewHolder> {
 

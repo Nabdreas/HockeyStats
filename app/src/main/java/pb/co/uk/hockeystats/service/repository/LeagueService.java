@@ -1,6 +1,6 @@
-package pb.co.uk.hockeystats.network;
+package pb.co.uk.hockeystats.service.repository;
 
-import pb.co.uk.hockeystats.data.League;
+import pb.co.uk.hockeystats.service.model.League;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -10,6 +10,7 @@ import retrofit2.http.Path;
  */
 
 public interface LeagueService {
+
     @GET("GET /leagues/{id}/leagues")
     Call<League> getLeague(@Path("id") Long id);
 }

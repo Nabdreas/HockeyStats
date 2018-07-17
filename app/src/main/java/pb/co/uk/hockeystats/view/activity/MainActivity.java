@@ -1,4 +1,4 @@
-package pb.co.uk.hockeystats.activity;
+package pb.co.uk.hockeystats.view.activity;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,9 +8,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.MenuItem;
 
 import pb.co.uk.hockeystats.R;
-import pb.co.uk.hockeystats.fragment.LeagueFragment;
-import pb.co.uk.hockeystats.fragment.SearchFragment;
-import pb.co.uk.hockeystats.fragment.TransfersFragment;
+import pb.co.uk.hockeystats.view.fragment.LeagueFragment;
+import pb.co.uk.hockeystats.view.fragment.SearchFragment;
+import pb.co.uk.hockeystats.view.fragment.TransfersFragment;
 
 public class MainActivity extends BaseActivity {
 

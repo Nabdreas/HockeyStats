@@ -1,4 +1,4 @@
-package pb.co.uk.hockeystats.model.viewholder;
+package pb.co.uk.hockeystats.view.viewholder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
