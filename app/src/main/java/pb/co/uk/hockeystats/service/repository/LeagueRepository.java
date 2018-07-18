@@ -3,25 +3,27 @@ package pb.co.uk.hockeystats.service.repository;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 
+import java.util.List;
+
 import pb.co.uk.hockeystats.service.model.League;
 import pb.co.uk.hockeystats.service.network.BaseApi;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
-public class LeagueRepository {
+public class LeagueRepository extends BaseApi {
 
     private LeagueService leagueService;
     private static LeagueRepository leagueRepository;
 
     private LeagueRepository() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BaseApi.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        leagueService = retrofit.create(LeagueService.class);
+        super();
+        buildService();
+    }
+
+    @Override
+    protected void buildService() {
+        leagueService = getClient().create(LeagueService.class);
     }
 
     public synchronized static LeagueRepository getInstance() {
@@ -37,7 +39,9 @@ public class LeagueRepository {
         leagueService.getLeague(leagueId).enqueue(new Callback<League>() {
             @Override
             public void onResponse(Call<League> call, Response<League> response) {
-                data.setValue(response.body());
+                if (response.isSuccessful()) {
+                    data.setValue(response.body());
+                }
             }
 
             @Override

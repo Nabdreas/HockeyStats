@@ -11,6 +11,6 @@ import retrofit2.http.Path;
 
 public interface LeagueService {
 
-    @GET("GET /leagues/{id}/leagues")
+    @GET("leagues/{id}/leagues")
     Call<League> getLeague(@Path("id") Long id);
 }

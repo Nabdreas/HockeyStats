@@ -5,6 +5,7 @@ package pb.co.uk.hockeystats.service.model;
  */
 
 public class League {
+
     public boolean virtual;
     public String imageUrl;
     public boolean hideParentLeagueName;
