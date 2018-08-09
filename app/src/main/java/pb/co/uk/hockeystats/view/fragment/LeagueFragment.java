@@ -86,8 +86,8 @@ public class LeagueFragment extends Fragment {
         leagueViewModel.getLeagueObservable().observe(this, new Observer<League>() {
             @Override
             public void onChanged(@Nullable League league) {
-                if (league != null) {
-                    mLeagueTitle.setText(league.fullName);
+                if (league.data != null) {
+                    mLeagueTitle.setText(league.data.fullName);
                 }
             }
         });

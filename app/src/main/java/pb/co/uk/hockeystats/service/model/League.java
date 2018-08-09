@@ -1,20 +1,16 @@
 package pb.co.uk.hockeystats.service.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by andreas_himself on 21/03/2018.
  */
 
 public class League {
 
-    public boolean virtual;
-    public String imageUrl;
-    public boolean hideParentLeagueName;
-    public boolean hasChildLeagues;
-    public boolean autoCreated;
-    public int logoId;
-    //TODO: complete the rest of object fields
-
-    public String name;
-    public String fullName;
+    @SerializedName("data")
+    @Expose
+    public LeagueData data;
 
 }

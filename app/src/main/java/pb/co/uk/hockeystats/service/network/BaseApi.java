@@ -24,6 +24,7 @@ public abstract class BaseApi {
     protected BaseApi() {
         super();
 
+        //TODO: create MyDeserializer
         gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -34,13 +35,12 @@ public abstract class BaseApi {
 
     public Retrofit getClient() {
         okHttpClient = buildOkHttpClient();
-        Retrofit retrofit = new Retrofit.Builder()
+
+        return new Retrofit.Builder()
                 .client(okHttpClient)
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
-
-        return retrofit;
     }
 
     private OkHttpClient buildOkHttpClient() {
